@@ -1,10 +1,69 @@
-/dentalnode_desktop/node_modules/*
-/dentalnode_desktop/build/*
-/dentalnode_restful/node_modules/*
-/dentalnode_restful/.fuse*
-/dentalnode_report/node_modules/*
-/dentalnode_restful/dentalApp-debug.log
-/dentalnode_restful/dentalApp-error.log
+# ===========================
+# Node.js - all modules
+# ===========================
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# ===========================
+# Application Logs
+# ===========================
 *.log
+logs/
+**/logs/
+dentalApp-debug.log
+dentalApp-error.log
+
+# ===========================
+# Environment & Secrets
+# ===========================
+.env
+.env.local
+.env.*.local
+config/secrets.js
+
+# ===========================
+# MongoDB Data
+# ===========================
+data/
+*.db
+
+# ===========================
+# Generated / Report PDFs
+# ===========================
+dentalnode_report/payments/*.pdf
+dentalnode_report/patient-pdf/*.pdf
+
+# ===========================
+# Build Output (dentalnode_desktop)
+# ===========================
+dentalnode_desktop/dist/
+dentalnode_desktop/build/
+dentalnode_desktop/.tmp/
+
+# ===========================
+# macOS
+# ===========================
+.DS_Store
+.AppleDouble
+.LSOverride
 .fuse*
-/dental/*
+**/.fuse*
+
+# ===========================
+# Editors & IDEs
+# ===========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===========================
+# OS temp files
+# ===========================
+*.tmp
+*.temp
