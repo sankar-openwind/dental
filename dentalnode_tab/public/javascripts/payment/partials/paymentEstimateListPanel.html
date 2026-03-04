@@ -1,0 +1,42 @@
+
+<div class="panel panel-primary" ng-show="paymentEstimateListPanel">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span>  Payment Estimates</span> 
+					</h3>
+				</div>
+
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Payment Estimate Name</th>
+          <th>Payment Estimate Date </th>
+          <th>Estimated Amount</th>
+           <th>View Payment Details</th>
+             
+        </tr>
+      </thead>
+      <tbody>
+    
+        <tr ng-repeat="paymentEstimate in paymentEstimateList">
+          <td>1</td>
+          <td>{{paymentEstimate.paymentEstimateName}}</td>
+          <td>{{paymentEstimate.paymentEstimateDate}}</td>
+          <td>{{paymentEstimate.estimateAmount}}</td>
+          <td><div class="form-group">
+							
+								<button ng-click="viewPaymentsList(paymentEstimate)" class="btn btn-primary btn-md">
+									View Payment Details
+								</button>
+							 
+						</div> </td>
+						 
+
+
+        </tr>
+       
+    
+      </tbody>
+    </table>
+</div>

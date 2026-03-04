@@ -1,0 +1,114 @@
+<div class="row">
+
+	<!-- Manage Patient Menu Items -->
+	<div ng-include src="'managePatientMenu.html'"></div>
+
+</div>
+
+<div class="row">
+	<br>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div ng-controller="patientController">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Case History</h3>
+				</div>
+				<div class="panel-body">
+
+					<form role="form" class="form-horizontal" role="form"
+					action="saveCaseHistory">
+
+						<div class="form-group">
+							<label for="exampleInputEmail1" class="col-lg-3 control-label">Chief
+								Complaint</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="exampleInputEmail1"
+								placeholder="Enter Chief Complaint"
+								name="caseHistory.chiefComplaint" required>
+							</div>
+						</div>
+
+						<!--
+						<div class="form-group">
+						<label for="exampleInputPassword1"
+						class="col-lg-3 control-label">Pre Natal History delete</label>
+						<div class="col-lg-8">
+						<input class="form-control" id="exampleInputPassword1"
+						placeholder="Pre Natal History"
+						name="caseHistory.PreNatalHistory" required>
+						</div>
+						</div>
+
+						<div class="form-group">
+						<label for="exampleInputPassword1"
+						class="col-lg-3 control-label">Post Natal History delete</label>
+						<div class="col-lg-8">
+						<input class="form-control" id="exampleInputPassword1"
+						name="caseHistory.postNatalHistory"
+						placeholder="Post Natal History" required>
+						</div>
+						</div>
+						<div class="form-group">
+						<label for="exampleInputPassword1"
+						class="col-lg-3 control-label">Habits delete</label>
+						<div class="col-lg-8">
+						<input class="form-control" id="exampleInputPassword1"
+						name="caseHistory.habits" placeholder="Habits" required>
+						</div>
+						</div>
+						<div class="form-group">
+						<label for="exampleInputPassword1"
+						class="col-lg-3 control-label">Injuries delete</label>
+						<div class="col-lg-8">
+						<input class="form-control" id="exampleInputPassword1"
+						name="caseHistory.injuries" placeholder="Injuries" required>
+						</div>
+						</div>
+						-->
+						<div class="form-group">
+							<label for="exampleInputPassword1"
+							class="col-lg-3 control-label">Medical History </label>
+							<div class="col-lg-8">
+								<input class="form-control" id="exampleInputPassword1"
+								name="caseHistory.medicalHistory" placeholder="Medical History" required>
+							</div>
+						</div>
+
+						<!--
+						<div class="form-group">
+						<label for="exampleInputPassword1"
+						class="col-lg-3 control-label">Brushing Habbit delete</label>
+						<div class="col-lg-8">
+						<input class="form-control" id="exampleInputPassword1"
+						name="caseHistory.brushingHabits" placeholder="Brushing Habits" required>
+						</div>
+						</div>
+						-->
+						<div class="form-group">
+							<label for="exampleInputPassword1"
+							class="col-lg-3 control-label">Any Another Information</label>
+							<div class="col-lg-8">
+								<input class="form-control" id="exampleInputPassword1"
+								name="caseHistory.anyAnotherInformation"
+								placeholder="Another Information" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-6 col-sm-3 col-md-offset-3">
+								<button type="submit" class="btn btn-primary btn-lg pull-center">
+									Save Case History
+								</button>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,294 @@
+<div ng-controller="diagonisController">
+	<!-- Theeth display start-->
+	<!--div ng-include src="'teethDisplay.html'"></div-->
+	<!-- Teeth Display end-->
+	<div class="row">
+		<br/>
+
+	</div>
+	<!-- Disease Categories Start-->
+	 
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					Disease Category
+				</div>
+				<div class="panel-body">
+					<ng-switch on="diseaseType">
+						<div class="row">
+
+							<div class="col-md-2">
+
+								<ul class="nav nav-pills nav-stacked">
+									<li>
+										<button class="btn btn-info   btn-lg" ng-click="toothDecay()">
+											Tooth Decay
+										</button>
+									</li>
+									<br/>
+									<li>
+										<button class="btn btn-info   btn-lg" ng-click="gumProblems()">
+											Gum Problem
+										</button>
+									</li>
+									<br/>
+									<li>
+										<button class="btn btn-info  btn-lg" ng-click="oralHygiene()">
+											Oral Hygiene
+										</button>
+									</li>
+									<br/>
+									<li>
+										<button class="btn btn-info  btn-lg" ng-click="dentalProcedures()">
+											Pre-existing
+											<br/>
+											Dental
+											<br/>
+											Procedures
+										</button>
+									</li>
+									<br/>
+									<li>
+										<button class="btn btn-info  btn-lg" ng-click="otherProblems()">
+											Other Problems
+										</button>
+									</li>
+									<br/>
+									<li>
+										<button class="btn btn-warning  btn-lg" ng-click="diagnosisSummary()">
+											View Diagnosis
+											<br/>
+											Summary
+										</button>
+									</li>
+									<br/>
+
+									<li>
+										<button class="btn btn-success btn-lg" ng-click="saveDiagonisSummary()">
+											Save Diagnosis
+											<br/>
+											Summary
+										</button>
+									</li>
+									<br/>
+									<li>
+										<button class="btn btn-success btn-lg" ng-click="exportToPDF()">
+											Export to PDF
+										</button>
+									</li>
+									<br/>
+								</ul>
+							</div>
+
+							<div class="col-md-10 ">
+								<div ng-include src="'teethDisplaySubPage.html'"></div>
+								<br/>
+								<br/>
+								<br/>
+								<span ng-switch-when="Tooth Decay">
+									<div class="well">
+										<button class="btn btn-default    btn-lg" ng-click="dentalCaries()">
+											Dental Caries
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="deepDentalCaries()">
+											Deep Dental Caries
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="crosslyDecayed()">
+											Grossly Decayed
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="cervicalErosin()">
+											Cervical Erosion
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="attrition()">
+											Attrition
+										</button>
+									</div> </span>
+
+								<span ng-switch-when="Gum Problems">
+									<div class="well">
+										<button class="btn btn-default    btn-lg" ng-click="gingitis()">
+											Gingivitis
+										</button>
+										<button class="btn btn-default   btn-lg" ng-click="periodontis()">
+											Periodontitis
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="packets()">
+											Pockets
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="gingicalEnlargement()">
+											Gingival Enlargment
+										</button>
+										<button class="btn btn-default  btn-lg" ng-click="gingicalRecession()">
+											Gingival Recession
+										</button>
+										<br/>
+										<br/>
+										<div class="btn-group">
+											<button class="btn btn-default   btn-lg"  ng-click="mobilityMo1()">
+												Mobility G1
+											</button>
+											<button class="btn btn-default    btn-lg"  ng-click="mobilityMo2()">
+												Mobility G2
+											</button>
+											<button class="btn btn-default    btn-lg" ng-click="mobilityMo3()">
+												Mobility G3
+											</button>
+										</div>
+									</div> </span>
+
+								<span ng-switch-when="Oral Hygiene">
+									<div class="well">
+
+										<div class="btn-group">
+											<button class="btn btn-default  btn-lg" ng-click="calculusCo1()">
+												Calculus +
+											</button>
+											<button class="btn btn-default  btn-lg" ng-click="calculusCo2()">
+												Calculus ++
+											</button>
+											<button class="btn btn-default   btn-lg" ng-click="calculusCo3()">
+												Calculus +++
+											</button>
+										</div>
+										<br/>
+										<br/>
+										<div class="btn-group">
+											<button class="btn btn-default    btn-lg" ng-click="strainsSo1()">
+												Stains +
+											</button>
+											<button class="btn btn-default    btn-lg" ng-click="strainsSo2()">
+												Stains ++
+											</button>
+											<button class="btn btn-default    btn-lg" ng-click="strainsSo3()">
+												Stains +++
+											</button>
+										</div>
+									</div> </span>
+
+								<span ng-switch-when="Dental Procedures">
+									<div class="well">
+										<button class="btn btn-default    btn-lg" ng-click="restorationsP()">
+											Restorations +Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="restorationsN()">
+											Restorations -Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="reTreatedP()">
+											Rc Treated +Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="reTreatedN()">
+											Rc Treated -Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="rpdP()">
+											RPD +Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="rpdN()">
+											RPD -Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="CDP()">
+											CD +Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="CDN()">
+											CD -Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="crownsP()">
+											Crowns +Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="crownsN()">
+											Crowns -Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="bridgesP()">
+											Bridges +Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="bridgesN()">
+											Bridges -Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="implantsP()">
+											Implants +Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="implantsN()">
+											Implants -Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="bracesP()">
+											Braces +Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="bracesN()">
+											Braces -Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="removableAppliancesP()">
+											Removable Appliances +Ve
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="removableAppliancesN()">
+											Removable Appliances -Ve
+										</button>
+									</div> </span>
+
+								<span ng-switch-when="Other Problems">
+									<div class="well">
+										<button class="btn btn-default    btn-lg" ng-click="missingTooth()">
+											Missing Tooth
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="sopraErupted()">
+											Supra Erupted
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="impacted()">
+											Impacted
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="crowding()">
+											Crowding
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="spacing()">
+											Spacing
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="trauma()">
+											Trauma
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="abcess()">
+											Abcess
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="ulcers()">
+											Ulcers
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="frenal()">
+											High Frenal Attachments
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="deepbite()">
+											Deepbite
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="openbite()">
+											Open Bite
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="crossbite()">
+											Cross Bite
+										</button>
+										<button class="btn btn-default    btn-lg" ng-click="fracturedTeeth()">
+											Fractured Teeth
+										</button>
+									</div> </span>
+
+								<span ng-switch-when="Diagnosis Summary">
+									<div class="well">
+
+										<b>Diagnosis Summary</b>
+										<br/>
+										<br/>
+										<div ng-repeat="(disease, diseaseValue) in diagnosisInformation">
+
+											<b> {{disease}}</b>
+											<div ng-repeat="(subDisease, subDiseaseValue) in diseaseValue">
+												{{subDisease}}    --> <span ng-repeat="teeth in subDiseaseValue">{{teeth}} , </span>
+											</div>
+											<br/>
+
+										</div>
+
+									</div> </span>
+
+							</div>
+
+						</div>
+					</ng-switch>
+				</div>
+			</div>
+	 
+	<!-- Disease Categories End-->
+</div>

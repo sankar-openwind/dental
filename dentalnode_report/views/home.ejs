@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <script src="js/angular/angular.js"></script>
+        <script src="js/angular/angular-route.min.js"></script>
+        <script src="js/angular/angular-sanitize.min.js"></script>
+        <script src="js/diagnosiscontroller.js"></script>
+        <script src="js/treatmentcontroller.js"></script>
+        
+        <script src="js/MenuController.js"></script>
+        <script src="js/NetPendingAmountReportController.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <title>Angel Dental Doctor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+    </head>
+    <body>
+        <header role="banner">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-1">
+                        <a href="#/"><img src="img/social.png" alt="..."
+                        class="img-rounded"></a>
+                    </div>
+                    <div class="col-md-9 pull-left">
+                        <h2> Dental Hostpital <small>makes you smile</small></h2>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="row">
+            <div class="col-md-1"></div>
+
+            <!--  content starts -->
+
+            <!-- Menu Ends -->
+
+            <!-- Main content-->
+            <div class="col-md-10">
+
+                <div ng-view></div>
+            </div>
+            <div class="col-md-1"></div>
+            <!-- Main content Ends-->
+
+            <!--
+            Content Ends -->
+        </div>
+
+    </body>
+</html>

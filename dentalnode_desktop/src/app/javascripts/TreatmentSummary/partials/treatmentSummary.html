@@ -1,0 +1,143 @@
+<div class="row">
+
+    <!-- Manage Patient Menu Items -->
+    <div ng-include src="'/app/javascripts/common/partials/managePatientMenu.html'"></div>
+
+</div>
+
+<div class="row">
+    <br>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Diagnosis Summary</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="well">
+
+
+                        <br/>
+                        <br/>
+
+                        <div ng-repeat="(disease, diseaseValue) in summaryResponse.diagonsisSummaryResponse.diagnosisData">
+
+                            <div ng-if="disease == 'notes' ">
+                                    <b>Notes: </b> {{diseaseValue}}</div>
+                                           
+                                        <div ng-if="disease != 'notes' "> <b> {{disease}}</b> </div>
+                            <div ng-repeat="(subDisease, subDiseaseValue) in diseaseValue">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        {{subDisease}} </div>
+                                    <div class="col-md-8"> <span ng-repeat="teeth in subDiseaseValue"> <button disabled="true" class="btn btn-xs btnpadding"  ng-click="treatmentPlanStateChange( teeth)" >
+                                        <img src="img/theeth.jpg">
+                                        <br/>
+                                        {{teeth}}
+                                    </button> </span>
+                                        <br/>
+                                        <br/> </div>
+                                </div>
+                            </div>
+                            <br/>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Treatment Summary</h3>
+                </div>
+                <div class="panel-body well">
+
+
+
+
+                    <div ng-repeat="(disease, diseaseValue) in summaryResponse.treatmentPlanSummaryResponse.treatmentPlanData">
+                        <div ng-if="disease != ('recordType')">
+                            <b> {{disease}}</b></div>
+
+                        <div ng-repeat="(subDisease, subDiseaseValue) in diseaseValue">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    {{subDisease}} </div>
+                                <div class="col-md-8">
+                                    <span ng-repeat="(teeth,treatmentDone) in subDiseaseValue"> 
+										<button   ng-click="treatmentStateChange(disease,subDisease,teeth,treatmentDone)"  ng-class="{'btn-danger btn btn-xs btnpadding': treatmentDone=='NotStarted','btn-warning btn btn-xs btnpadding': treatmentDone=='InProgress', 'btn-success btn btn-xs btnpadding': treatmentDone=='Completed', }">
+										<img src="img/theeth.jpg">
+										<br/>
+										{{teeth}}
+									</button>
+ 
+									  </span> </div>
+                            </div>
+                            <br/>
+                            <br/>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-xs-6 col-sm-3 col-md-offset-3">
+                            <button type="submit" ng-click="saveTreatmentDone()" class="btn btn-primary btn-lg pull-center">
+                                Save Treatment Done
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Treatment History</h3>
+                </div>
+                <div class="panel-body">
+
+
+                    <div ng-repeat="treatmentPlan in summaryResponse.treatmentPlanMaster.treatmentPlanDetails">
+
+                        <br>
+                        <div style='background-color: #CCFF66;'><b> {{treatmentPlan.dateOfTreatmentPlan  | date:'medium'}} </b></div>
+
+                        <div ng-repeat="(k,v) in treatmentPlan.treatmentPlanData">
+                            <div ng-if="k != 'recordType' ">
+                                <b> {{k}}</b></div>
+                            <div ng-repeat="(subDisease, subDiseaseValue) in v">
+                                <div class="row">
+                                    <div class="col-md-4 pull-left">
+                                        {{subDisease}} </div>
+                                    <div class="col-md-8"> <span ng-repeat="(tk,tv) in subDiseaseValue"> 
+										<button   ng-click="treatmentStateChange(disease,subDisease,teeth,tv)"   ng-class="{'btn-danger btn   btnpadding': tv=='NotStarted','btn-warning btn  btnpadding': tv=='InProgress', 'btn-success btn  btnpadding': tv=='Completed', }">
+										<img src="img/theeth.jpg">
+										<br/>
+										{{tk}} 
+									</button>
+
+									  </span> </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>

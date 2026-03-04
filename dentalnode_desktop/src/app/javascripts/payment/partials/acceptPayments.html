@@ -1,0 +1,132 @@
+<br/><br/>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div ng-if="addPaymentPanel">
+            <div ng-include="'/app/javascripts/payment/partials/addPaymentPanel.html'"></div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<div ng-if="paymentSuccessMessage" class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 well">
+        {{paymentSuccessMessage}}
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <uib-tabset justified="true">
+            <uib-tab heading="Today's Payment Details">
+                <br/>
+                <br/>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span>Today Check in and Payment Details</span></h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Patient Name</span>
+                            <input type="text" class="form-control" placeholder="Patient Name" aria-describedby="basic-addon1" ng-model="searchCheckInList.name">
+                        </div>
+
+                        <br/>
+
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                                <th>#</th>
+                                <th>Patient ID</th>
+                                <th>Name</th>
+                                <th>Treatment Payment</th>
+                                <th>Misc Payment</th>
+                                 <th>Total Planned Payment</th>
+                                <th>Paid Amount</th>
+                                <th>comments</th>
+                                <th>Date</th>
+                                <th>Make Payment</th>
+                                <th>Checkin Status</th>
+
+
+                            </tr>
+
+                            <tr ng-repeat="item in checkInList">
+                                <tr ng-repeat="item in checkInList | filter:searchCheckInList:false">
+                                    <td>{{$index + 1}} </td>
+                                    <td> <a href="/?#/viewPatient/{{item.lastCheckin.patientId}}">{{item.lastCheckin.patientId}}</a></td>
+                                    <td><a href="/?#/viewPatient/{{item.lastCheckin.patientId}}">{{item.lastCheckin.name}}</a></td>
+                                    <th>{{item.lastCheckin.treatmentPayment}}</th>
+                                    <td> {{item.lastCheckin.miscPayment}} </td>
+                                    <td> {{item.lastCheckin.totalPlannedPayment}} </td>
+                                    <td>
+                                        <input type="text" class="form-control  " id="item.lastCheckin.lastPaidAmount" placeholder="Amount paid now" ng-model="item.lastCheckin.lastPaidAmount" required ng-disabled=" item.lastCheckin.paymentComplete"> </td>
+                                    <td> 
+                                    <textarea type="text" rows="2" class="form-control"   ng-model="item.lastCheckin.comments" required  ng-disabled="item.lastCheckin.paymentComplete"></textarea>
+                                      </td>
+                                    <td> {{item.lastCheckin.checkinDate | date:"dd MMM yyyy 'at' h:mma"}} </td>
+
+                                    <td>
+                                        <div ng-if=" item.lastCheckin.totalPlannedPayment">
+                                            <button class=" btn btn-primary" ng-click="savePayment(item)" ng-disabled=" item.lastCheckin.paymentComplete"> <span>{{ item.lastCheckin.paymentComplete ? 'Paid' : 'Make Payment' }}</span> </button>
+                                        </div>
+                                          <td> <button class=" btn btn-primary" ng-click="changeStatus($index, item)" ng-disabled="item.lastCheckin.checkInStatus=='Completed'"   ng-class="{'btn-danger btn btn-xs btnpadding': item.lastCheckin.checkInStatus=='Waiting','btn-warning btn btn-xs btnpadding': item.lastCheckin.checkInStatus=='InProgress', 'btn-success btn btn-xs btnpadding': item.lastCheckin.checkInStatus=='Completed', }"> {{item.lastCheckin.checkInStatus}}  </button></td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab heading="Pending Payment Details">
+                <br/><br/>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+						<span>Old Pending Check in and Payment Details</span> 
+					</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Patient Name</span>
+                            <input type="text" class="form-control" placeholder="Patient Name" aria-describedby="basic-addon1" ng-model="searchOldCheckInList.name">
+                        </div>
+                        <br/>
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                                <th>#</th>
+                                <th>Patient ID</th>
+                                <th>Name</th>
+                                <th>Planned Payment</th>
+                                <th>Paid Amount</th>
+                                <th>comments</th>
+                                <th>Date</th>
+                                <th>Make Payment</th>
+                                <th>Checkin Status</th>
+                            </tr>
+                            <tr ng-repeat="item in OldcheckInList">
+                                <tr ng-repeat="item in OldcheckInList | filter:searchOldCheckInList">
+                                    <td>{{$index + 1}}</td>
+                                    <td> <a href="/?#/viewPatient/{{item.lastCheckin.patientId}}">{{item.lastCheckin.patientId}}</a></td>
+                                    <td><a href="/?#/viewPatient/{{item.lastCheckin.patientId}}">{{item.lastCheckin.name}}</a></td>
+                                    <td> {{item.lastCheckin.plannedAmount}} </td>
+                                    <td>
+                                        <input type="text" class="form-control  " id="item.lastCheckin.lastPaidAmount" placeholder="Amount paid now" ng-model="item.lastCheckin.lastPaidAmount" required ng-disabled=" item.lastCheckin.paymentComplete"> </td>
+                                    <td>
+                                        <input type="text" class="form-control  " id="item.lastCheckin.comments" placeholder="Comments " ng-model="item.lastCheckin.comments" required ng-disabled="item.lastCheckin.paymentComplete"> </td>
+                                    <td> {{item.lastCheckin.checkinDate | date:"dd MMM yyyy 'at' h:mma"}} </td>
+
+                                    <td>
+                                        <div ng-if=" item.lastCheckin.plannedAmount">
+                                            <button class=" btn btn-primary" ng-click="savePayment(item)" ng-disabled="item.lastCheckin.paymentComplete"> <span>{{ ! item.lastCheckin.paymentComplete ? 'Make Payment' : 'Paid' }}</span> </button>
+                                        </div>
+                                         <td> <button class=" btn btn-primary" ng-click="changeStatus($index, item)" ng-disabled="item.lastCheckin.checkInStatus=='Completed'"   ng-class="{'btn-danger btn btn-xs btnpadding': item.lastCheckin.checkInStatus=='Waiting','btn-warning btn btn-xs btnpadding': item.lastCheckin.checkInStatus=='InProgress', 'btn-success btn btn-xs btnpadding': item.lastCheckin.checkInStatus=='Completed', }"> {{item.lastCheckin.checkInStatus}}  </button></td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            </uib-tab>
+    </div>
+    <div class="col-md-1"></div>
+</div>

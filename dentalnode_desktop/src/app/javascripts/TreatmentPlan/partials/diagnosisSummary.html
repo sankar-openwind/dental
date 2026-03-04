@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-md-6">         
+                    <div class="well">
+                    <div class="center "  style ='background-color: #CCFF66;'> <b >Diagnosis Summary</b> </div>
+                                        <br/>
+                                        <br/>
+                             
+                                        <div ng-repeat="(disease, diseaseValue) in diagnosisInformation">
+
+                                        <div ng-if="disease == 'notes' ">
+                                    <b>Notes: </b> <pre> {{diseaseValue}} </pre></div>
+                                           
+                                        <div ng-if="disease != 'notes' "> <b> {{disease}}</b> </div>
+                                            <div ng-repeat="(subDisease, subDiseaseValue) in diseaseValue">
+                                              <div class="row"> <div class="col-md-4 pull-left">
+                                    {{subDisease}}  </div><div class="col-md-8">    <span ng-repeat="teeth in subDiseaseValue"> 
+                                                <button   ng-click="treatmentPlanStateChange( teeth)"  ng-class="{'btn-danger btn btn-xs btnpadding': treatmentDone, 'btn btn-xs btn-default btnpadding': !treatmentDone}" title="Click to Select Teeth" data-toggle="tooltip">
+                                        <img src="img/theeth.jpg">
+                                        <br/>
+                                        {{teeth}}
+                                    </button>
+
+
+                                                </span> <br/><br/> </div></div>
+                                            </div>
+                                           <br/>
+                                        </div>
+                                    </div>          
+        </div>
+         <div class="col-md-6 "> 
+            <div class="well">
+<div class="center "  style ='background-color: #CCFF66;'> <b >Treatment Summary</b> </div>
+                                        <br/>
+                                        <br/>
+                                        <div ng-repeat="(disease, diseaseValue) in treatmentPlanInformation">
+
+
+                                        <div ng-if="disease == 'notes' ">Notes: {{notes}}</div>
+                                            <b> {{disease}}</b>
+                                            <div ng-repeat="(subDisease, subDiseaseValue) in diseaseValue">
+                                                <div class="row"> <div class="col-md-4 pull-left">
+                                    {{subDisease}}  </div><div class="col-md-8">      <span ng-repeat="(tk,tv) in subDiseaseValue"> 
+                                                <button    ng-click="removeTeethFromTreatment(disease,subDisease,tk,tv)"  ng-class="{'btn-danger btn btn-xs btnpadding': tv=='NotStarted','btn-warning btn btn-xs btnpadding': tv=='InProgress', 'btn-success btn btn-xs btnpadding': tv=='Completed', }"title="Click to Remove Teeth" data-toggle="tooltip">
+                                        <img src="img/theeth.jpg">
+                                        <br/>
+                                        {{tk}}
+                                    </button>
+                                                </span> <br/><br/></div></div>
+                                            </div>
+                                           <br/>
+                                        </div>
+                                    </div>
+        
+         </div> 
+
+    </div>
+
+</div>

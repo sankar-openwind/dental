@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dentalApp">
+	<head>
+		<meta charset="utf-8">
+				
+		<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+		
+		<title>Angel Dental Doctor</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<script type="text/javascript">
+			if (sessionStorage){
+				sessionStorage.user = "<%= user %>";
+				sessionStorage.role = "<%= role %>";
+				sessionStorage.clinicName = "<%= clinicName %>";
+			}else{
+				alert("USE HTML5 COMPATIBLE BROWSER");
+			}
+		</script>
+	</head>
+	<body>
+		<header role="banner">
+			<div class="page-header">
+				<div class="row">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-10">
+						<a href="#/"><img src="img/social.png" alt="..."
+						class="img-rounded"></a>
+						<h2 style="display:inline;"> Angel Dental Hostpital <small>Advanced oral care</small></h2>
+					</div>
+					<div class="col-sm-1"></div>
+				</div>
+			</div>
+		</header>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<div ng-view></div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- VENDOR -->
+		<script src="javascripts/vendor/angular.min.js"></script>
+		<script src="javascripts/vendor/jquery-1.11.0.min.js"></script>
+		<script src="javascripts/vendor/angular-route.min.js"></script>
+		<script src="javascripts/vendor/angular-sanitize.min.js"></script>
+		<script src="javascripts/vendor/ui-bootstrap-tpls-0.11.0.min.js"></script>
+		
+		<!-- MODULES -->
+		<script src="javascripts/app.js"></script>
+		
+		<!-- CONTROLLERS -->
+		<script src="javascripts/patient/controller/PatientController.js"></script>
+		<script src="javascripts/CaseHistory/controller/DiagnosisController.js"></script>
+		<script src="javascripts/TreatmentPlan/controller/TreatmentPlanController.js"></script>
+		<script src="javascripts/ChiefComplaint/controller/ChiefComplaintController.js"></script>
+		<script src="javascripts/PatientPhoto/controller/PatientPhotoController.js"></script>
+		<script src="javascripts/comment/controller/CommentController.js"></script>
+		<script src="javascripts/payment/controller/PaymentController.js"></script>
+		
+	</body>
+</html>

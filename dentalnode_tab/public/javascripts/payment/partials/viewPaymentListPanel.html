@@ -1,0 +1,100 @@
+<div class="panel panel-primary" ng-show="viewPaymentListPanel">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span> View Payments </span> 
+					</h3>
+				</div>
+<br> 
+					<form  novalidate  class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="firstName" class="col-lg-3 control-label">Payment Estimate Name</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" ng-model="paymentEstimate.paymentEstimateName"
+								placeholder="Enter Treatment Name" required disabled="true">
+							</div>
+						</div>
+
+							<div class="form-group">
+							<label for="firstName" class="col-lg-3 control-label">  Estimate Date</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" ng-model="paymentEstimate.paymentEstimateDate"
+								placeholder="Enter Treatment Name" disabled="true">
+							</div>
+						</div>
+
+						 
+
+						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Estimate Amount</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control  " id="paymentEstimate.amount"
+								placeholder="Enter Estimate Amount" ng-model="paymentEstimate.estimateAmount" required disabled="true">
+							</div>
+						</div>
+ 
+ 						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Paid Amount</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control  " id="paymentEstimate.amount"
+								placeholder="Enter Estimate Amount" ng-model="paymentEstimate.paidAmount" required disabled="true">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Pending  Amount</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control  " id="paymentEstimate.amount"
+								placeholder="Enter Estimate Amount" ng-model="paymentEstimate.pendingAmount" required disabled="true">
+							</div>
+						</div>
+ 
+ 					</form>
+
+ 					<div class="row">
+ 					<div class="col-md-10">
+ 						<button ng-click="addPayment(paymentEstimate)" class="btn btn-primary btn-md pull-right">
+									Add Payment 
+								</button></div>
+	<div class="col-md-2"></div>
+	</div>
+ 				
+
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-8">
+	<div class="form-group">
+							
+								
+							 
+						</div>
+<table class="table table-striped">
+      <thead>
+        <tr >
+        
+          <th>Payment Date </th>
+          <th>Paid Amount</th>
+      
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="payment in paymentEstimate.payments">
+         
+          <td>{{payment.paymentDate}}</td>
+          <td>{{payment.paidAmount}}</td>
+        </tr>
+
+          
+       
+      </tbody>
+    </table> 
+    </div>
+
+    <br>
+    <br>
+</div>
+
+
+
+
+
+			

@@ -1,0 +1,84 @@
+ 
+ <div class="panel panel-primary" ng-show="ViewPaymentPanel">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span>View Payment Details </span></h3>
+    </div>
+    <div class="panel-body">
+        <form novalidate class="form-horizontal" role="form">
+
+            <div class="row">
+                <div class="col-md-4">
+                 <label for="lastName" class="control-label">  Treatment Planned Amount</label>
+             </div>
+             <div class="col-md-2">
+              <input type="text" class="form-control  " id="payment.treatmentPlannedAmount"   ng-model="payment.treatmentPlannedAmount"
+               ng-keyup="updatePaymentPlanAmount()"  placeholder="0" disabled="true">
+          </div>
+
+          <div class="col-md-4">
+              <label for="lastName" class="control-label">Misc Planned Amount</label>
+          </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control  " id="payment.miscPlannedAmount"  ng-model="payment.miscPlannedAmount" placeholder="0"  ng-keyup="updatePaymentPlanAmount()"  disabled="true">
+          </div>
+      </div>
+       <div class="row"><br/> </div>  
+            <div class="row">
+                <div class="col-md-4">
+                 <label for="lastName" class="control-label">  Treatment Paid Amount</label>
+             </div>
+             <div class="col-md-2">
+              <input type="text" class="form-control  " id="payment.treatmentPaidAmount"   ng-model="payment.treatmentPaidAmount"
+               ng-keyup="updatePaymentPlanAmount()"  placeholder="0" disabled="true">
+          </div>
+
+          <div class="col-md-4">
+              <label for="lastName" class="control-label">Misc Paid Amount</label>
+          </div>
+          <div class="col-md-2">
+              <input type="text" class="form-control  " id="payment.miscPaidAmount"  ng-model="payment.miscPaidAmount" placeholder="0"  ng-keyup="updatePaymentPlanAmount()"  disabled="true">
+          </div>
+      </div>
+
+      <div class="row"><br/> </div>
+
+      <div class="row">
+          <div class="col-md-3">
+              <label for="lastName" class="control-label">Total Paid Amount</label>
+          </div>
+          <div class="col-md-3">
+              <input type="text" class="form-control  " id="payment.totalPaidAmount" placeholder="0" ng-model="payment.totalPaidAmount" disabled="true" disabled="true">
+          </div>
+      </div>
+      <div class="row"><br/> </div>
+      <div class="row">
+        <div class="col-md-3">
+           <label for="comment" class=" control-label">Comment</label>
+       </div>
+       <div class="col-md-6"><textarea type="text" rows="3" class="form-control" ng-model="payment.comments" disabled="true"></textarea>
+       </div>
+
+   </div>
+
+
+    <div class="row"><br/> </div>
+     <div class="row">
+      <div class="col-md-3">
+
+      </div>
+      <div class="col-md-3">
+         
+    </div>
+    <div class="col-md-3">
+       <button ng-click="returnHome()" class="btn btn-primary ">
+        Back
+    </button>
+ 
+</div>
+
+
+</div>
+
+</form>
+</div>
+</div>

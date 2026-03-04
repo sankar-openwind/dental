@@ -1,0 +1,82 @@
+<div class="row"  ng-controller="patientDetailsController">
+	<div class="col-md-12">
+		<div>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{patient.patientDetails.firstname}} {{patient.patientDetails.lastname}} </h3>
+				</div>
+				<div class="panel-body">
+
+					<form action="patientHome.html" class="form-horizontal"
+					role="form">
+
+						<div class="form-group">
+							<label for="firstName" class="col-lg-3 control-label">Patient ID</label>
+							<div class="col-lg-8">
+								<input type="text"  ng-model="patient.patientDetails.patientid" class="form-control" disabled="true" >
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="firstName" class="col-lg-3 control-label">First
+
+								Name <!--  --></label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" ng-model="patient.patientDetails.firstname" disabled="true" >
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Last
+								Name</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" ng-model="patient.patientDetails.lastname" disabled="true" >
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Address</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" disabled="true" ng-model="patient.patientDetails.address" >
+							</div>
+
+						</div>
+
+						<div class="form-group">
+							<label for="phone" class="col-lg-3 control-label">Phone</label>
+							<div class="col-lg-8">
+								<input type="tel" class="form-control" disabled="true" ng-model="patient.patientDetails.phone">
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="Age" class="col-lg-3 control-label">Age</label>
+							<div class="col-lg-8">
+								<input type="tel" class="form-control" id="patient.patientDetails.age" disabled="true"
+								 ng-model="patient.patientDetails.age" required  >
+							</div>
+						</div>
+							<div class="form-group">
+							<label for="phone" class="col-lg-3 control-label">Sex</label>
+							<div class="col-lg-8">
+								<input type="tel" class="form-control" id="patient.patientDetails.gender" disabled="true"
+							  ng-model="patient.patientDetails.gender" required  >
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1" class="col-lg-3 control-label">Email</label>
+							<div class="col-lg-8">
+								<input type="email" class="form-control" disabled="true" ng-model="patient.patientDetails.email" >
+							</div>
+						</div>
+
+					</form>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

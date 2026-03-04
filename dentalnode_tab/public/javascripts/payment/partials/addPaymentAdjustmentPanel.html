@@ -1,0 +1,43 @@
+
+<div class="panel panel-primary" ng-show="addPaymentAdjustmentPanel">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span>Add Payment Adjustment </span> 
+					</h3>
+				</div>
+				<div class="panel-body">
+	
+					<form  novalidate  class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="firstName" class="col-lg-3 control-label">Payment Details</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" value="Adjustment" ng-model="paymentAdjustment.paymentName"
+								 disabled="true" required placeholder="Adjustment" >
+							</div>
+						</div>
+						 
+
+ 						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Amount</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control  " id="payment.lastPaidAmount"
+								placeholder="Enter Payment Amount" ng-model="paymentAdjustment.lastPaidAmount" required>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-xs-6 col-sm-3 col-md-offset-5">
+								<button ng-click="savePaymentAdjustment(paymentAdjustment)" class="btn btn-primary ">
+									Save Payment Adjustment
+								</button>
+							</div>
+							<div class="col-xs-6 col-sm-3 pull-right">
+								<button ng-click="returnHome()" class="btn btn-primary ">
+									Back 
+								</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>

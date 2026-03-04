@@ -1,0 +1,131 @@
+  <div class="row">
+ <div class="pull-right">
+  <button  class=" btn btn-primary" ng-click="addPayment()">Make Payment </button>
+  <button  class=" btn btn-primary" ng-click="addPaymentAdjustment()">Add Adjustment </button>
+           <button  class=" btn btn-primary " ng-click="addPaymentEstimate()">Add Payment Estimate</button></div>
+
+           </div>
+           <br>
+             <div class="row">
+<div class="panel panel-primary" ng-show="newPaymentHome">
+
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span>  Payment Estimates</span> 
+					</h3>
+         
+				</div>
+
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Payment Estimate Name</th>
+          <th>Payment Estimate Date </th>
+          <th>Estimated Amount</th>
+          <th>View Details</th>
+        
+        
+             
+        </tr>
+      </thead>
+      <tbody>
+
+    
+        <tr ng-repeat="paymentEstimate in paymentMaster.paymentEstimates">
+          <td>1</td>
+          <td>{{paymentEstimate.paymentEstimateName}}</td>
+          <td>{{paymentEstimate.paymentEstimateDate | date:"dd MMM yyyy 'at' h:mma"}}</td>
+          <td>{{paymentEstimate.estimateAmount}}</td>
+          <td><button class="btn btn-primary"  ng-click="viewPaymentEstimateDetails(paymentEstimate)"> View Details </button></td>
+      
+						 
+
+
+        </tr>
+       
+    
+      </tbody>
+    </table>
+</div>
+
+
+<div class="panel panel-primary" ng-show="newPaymentHome">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <span>  Payment Summary</span> 
+          </h3>
+        </div>
+<div class="panel-body">
+
+          <form  novalidate  class="form-horizontal" role="form">
+  <div class="form-group">
+ 
+              <label for="lastName" class="col-lg-3 control-label">Estimate Amount</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control  "  ng-model="paymentMaster.totalEstimateAmount" required disabled="true">
+              </div>
+            </div>
+ 
+            <div class="form-group">
+              <label for="lastName" class="col-lg-3 control-label">Paid Amount</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control  "  ng-model="paymentMaster.totalPaidAmount" required disabled="true">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="lastName" class="col-lg-3 control-label">Pending  Amount</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control  "  ng-model="paymentMaster.netPendingAmount" required disabled="true">
+              </div>
+            </div>
+
+             <div class="form-group">
+              <label for="lastName" class="col-lg-3 control-label">Adjusted  Amount</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control  " ng-model="paymentMaster.totalAdjustedAmount" required disabled="true">
+              </div>
+            </div></form>
+</div></div>
+</div>
+
+
+           <div class="row">
+<div class="panel panel-primary" ng-show="newPaymentHome">
+
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <span>  Payments</span> 
+          </h3>
+         
+        </div>
+
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Payment  Name</th>
+          <th>Payment  Date </th>
+          <th>Payment Amount</th>
+        
+             
+        </tr>
+      </thead>
+      <tbody>
+    
+        <tr ng-repeat="payment  in paymentMaster.payments">
+          <td>1</td>
+          <td>{{payment.name}}</td>
+          <td>{{payment.paymentDate | date:"dd MMM yyyy 'at' h:mma"}}</td>
+          <td>{{payment.paidAmount}}</td>
+      
+             
+
+
+        </tr>
+       
+    
+      </tbody>
+    </table>
+</div>

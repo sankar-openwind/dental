@@ -1,0 +1,51 @@
+<div class="panel panel-primary"  >
+
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span>  Case History</span> 
+					</h3>
+         
+				</div>
+
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+           
+          <th>Case History Date </th>
+          
+          <th>View Details</th>
+        
+        
+             
+        </tr>
+      </thead>
+      <tbody>
+
+    
+        <!-- ngRepeat: paymentEstimate in paymentMaster.paymentEstimates --><tr ng-repeat="paymentEstimate in diagnosisInformation.paymentEstimates" class="ng-scope">
+          <td>1</td>
+          <td class="ng-binding">hello</td>
+          <td class="ng-binding">12 Jul 2015 at 10:22PM</td>
+          <td class="ng-binding">1560</td>
+          <td><button class="btn btn-primary" ng-click="viewPaymentEstimateDetails(paymentEstimate)"> View Details </button></td>
+      
+						 
+
+
+        </tr><!-- end ngRepeat: paymentEstimate in paymentMaster.paymentEstimates --><tr ng-repeat="paymentEstimate in paymentMaster.paymentEstimates" class="ng-scope">
+          <td>1</td>
+          <td class="ng-binding">cleanning and filling</td>
+          <td class="ng-binding">12 Jul 2015 at 10:36PM</td>
+          <td class="ng-binding">1600</td>
+          <td><button class="btn btn-primary" ng-click="viewPaymentEstimateDetails(paymentEstimate)"> View Details </button></td>
+      
+						 
+
+
+        </tr><!-- end ngRepeat: paymentEstimate in paymentMaster.paymentEstimates -->
+       
+    
+      </tbody>
+    </table>
+</div>

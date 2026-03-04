@@ -1,0 +1,105 @@
+
+<div class="panel panel-primary" ng-show="ViewPaymentEstiPanel">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			<span>View Payment Estimate</span> 
+		</h3>
+	</div>
+	<div class="panel-body">
+
+
+		<div ng-controller="PaymentController">
+ 
+ 
+			<div class="row">
+				<div class="col-md-12">
+
+					<form  novalidate  class="form-horizontal" role="form">
+
+						<div class="form-group">
+							<label for="firstName" class="col-lg-3 control-label">Treament Name</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" ng-model="paymentEstimate.paymentEstimateName"
+								placeholder="Enter Treatment Name" required disabled="true">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Date</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control  " id="paymentEstimate.paymentEstimateDate"
+								 disabled="true" ng-model="paymentEstimate.paymentEstimateDate " required>
+							</div>
+						</div>  
+
+						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Amount</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control  " id="paymentEstimate.estimateAmount"
+								 disabled="true" ng-model="paymentEstimate.estimateAmount" required>
+							</div>
+						</div>  
+
+						<br><br>
+						 
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Treatment Type</th>
+									<th>Teeth Diagnosed</th>
+									<th>Treatment Unit Cost</th>
+									<th>Number of Units</th>
+									<th>Sub Cost</th>
+									 
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="elemnt in paymentEstimate.estimateelemnt ">
+								 
+									<div style="display:inline">
+										 
+											<td><span>
+												<input type="text" class="form-control" ng-model="elemnt.treatmenttype" placeholder="Treatment Type" disabled="true" required/>
+
+											</span></td>
+											<td><span>
+												<input type="text" class="form-control" ng-model="elemnt.teethDiagnosied" placeholder="Treatment Type" disabled="true" required/>
+
+											</span></td>
+											<td><span>
+												<input type="text" class="form-control" ng-model="elemnt.unitCost" placeholder="Treatment Sub Cost" disabled="true" required/>
+
+											</span></td>
+											<td> <span>
+												<input type="text" class="form-control" ng-model="elemnt.units" placeholder="No of Units"ng-keyup="estimatechanged($event)"  required disabled="true" />
+
+											</span></td>
+											<td><span>
+												<input type="text" class="form-control" ng-model="elemnt.subcost" placeholder="Sub Cost" required disabled="true"/>
+
+											</span></td>
+
+											 
+									</div> 
+								</tr>
+							</tbody>
+						</table>
+
+						
+
+						<div class="form-group">
+							<div class="col-xs-6 col-sm-3 col-md-offset-3">
+								<button  ng-click="returnHome()" class="btn btn-primary btn-lg">
+									Payment Home
+								</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+

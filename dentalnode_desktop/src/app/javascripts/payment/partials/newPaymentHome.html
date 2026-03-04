@@ -1,0 +1,162 @@
+<div class="row">
+    <div class="col-md-8">
+        <span ng-if="patientCheckin">
+            <button class=" btn btn-primary" ng-click="addPaymentPlan(patientCheckin)">Make Payment Plan</button>
+        </span>
+        <span ng-show="isAdmin"><button class=" btn btn-primary" ng-click="addPaymentAdjustment()">Add Adjustment </button></span>
+    </div>
+    <div class="col-md-4">
+        <div class="pull-right" ng-if="patientCheckinBoolean" style='background-color: #CCFF66;'> Checkin Date :{{patientCheckin.checkinDate | date:"MM/dd/yyyy 'at' h:mma"}}</div>
+    </div>
+</div>
+
+<br>
+<div class="row">
+    <div class="panel panel-primary" ng-show="newPaymentHome">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <span>Payment Estimates</span>
+            </h3>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <!--th>Payment Estimate Name</th-->
+                    <th>Payment Estimate Date </th>
+                    <th>Estimated Amount</th>
+                    <th>View Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="paymentEstimate in paymentMaster.paymentEstimates">
+                    <td>{{$index + 1}}</td>
+                    <!--td>{{paymentEstimate.paymentEstimateName}}</td-->
+                    <td>{{paymentEstimate.paymentEstimateDate | date:"dd MMM yyyy 'at' h:mma"}}</td>
+                    <td>{{paymentEstimate.estimateAmount}}</td>
+                    <td>
+                        <button class="btn btn-primary" ng-click="viewPaymentEstimateDetails(paymentEstimate)"> View Details </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div></div>
+    <div class="row">
+
+        <div class="panel panel-primary" ng-show="newPaymentHome">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <span>Payment Summary</span>
+                </h3>
+            </div>
+            <div class="panel-body">
+ <div class="row">
+                <div class="col-md-6 well"> 
+
+                    <div class="row">
+                       <div class="col-md-3"></div>
+
+                       <div class="col-md-6"> <label for="lastName" class=" control-label">Treatment Summary</label></div>
+                       <div class="col-md-3"></div>
+                   </div><br/>
+                   <div class="row">
+                    <div class="col-md-6">
+                     <label for="lastName" class=" control-label">Total Estimate Amount</label></div>
+                     <div class="col-md-6"><input type="text" class="form-control   " ng-model="paymentMaster.totalEstimateAmount" required disabled="true"></div>
+                     
+                 </div><br/><div class="row">
+                 <div class="col-md-6">
+                     <label for="lastName" class=" control-label">Total Paid Amount</label></div>
+                     <div class="col-md-6"><input type="text" class="form-control   " ng-model="paymentMaster.totalTreatmentPaidAmount" required disabled="true"></div>
+                 </div><br/><div class="row">
+                 <div class="col-md-6">
+                     <label for="lastName" class=" control-label">Total Adjusted Amount</label></div>
+                     <div class="col-md-6"><input type="text" class="form-control   " ng-model="paymentMaster.totalTreatmentAdjustedAmount" required disabled="true"></div>
+                 </div><br/><div class="row">
+                 <div class="col-md-6">
+                     <label for="lastName" class=" control-label">Total Pending Amount</label></div>
+                     <div class="col-md-6"><input type="text" class="form-control   " ng-model="paymentMaster.netTreatmentPendingAmount" required disabled="true"></div>
+                 </div><br/> 
+             </div>
+             <div class="col-md-6 well"> 
+
+
+                    <div class="row">
+                       <div class="col-md-3"></div>
+                       
+                       <div class="col-md-6"> <label for="lastName" class=" control-label">Miscellanous Summary</label></div>
+                       <div class="col-md-3"></div>
+                   </div><br/>
+                     <div class="row">
+                 <div class="col-md-6">
+                     <label for="lastName" class=" control-label">Total Paid Amount</label></div>
+                     <div class="col-md-6"><input type="text" class="form-control   " ng-model="paymentMaster.totalMiscPaidAmount" required disabled="true"></div>
+                 </div><br/><div class="row">
+                 <div class="col-md-6">
+                     <label for="lastName" class=" control-label">Total Adjusted Amount</label></div>
+                     <div class="col-md-6"><input type="text" class="form-control   " ng-model="paymentMaster.totalMiscAdjustedAmount" required disabled="true"></div>
+                 </div><br/><div class="row">
+                 <div class="col-md-6">
+                     <label for="lastName" class=" control-label">Total Pending Amount</label></div>
+                     <div class="col-md-6"><input type="text" class="form-control   " ng-model="paymentMaster.totalMiscPendingAmount" required disabled="true"></div>
+                 </div><br/> 
+
+
+             </div>
+         </div>
+</div>
+<div class="row">
+<div class="col-md-3"> </div>
+    <div class="col-md-3">
+                     <label for="lastName" class=" control-label">Net Paid Amount</label></div>
+                     <div class="col-md-3"><input type="text" class="form-control   " ng-model="paymentMaster.totalTreatmentPaidAmount+paymentMaster.totalMiscPaidAmount" required disabled="true"></div>
+                     <div class="col-md-3"> </div>
+                 </div>
+                 <br/>
+<div class="row">
+<div class="col-md-3"> </div>
+    <div class="col-md-3">
+                     <label for="lastName" class=" control-label">Net Pending Amount</label></div>
+                     <div class="col-md-3"><input type="text" class="form-control   " ng-model="paymentMaster.totalMiscPendingAmount+paymentMaster.netTreatmentPendingAmount" required disabled="true"></div>
+                     <div class="col-md-3"> </div>
+                 </div> <br/>
+
+</div>
+
+     </div></div></div>
+
+
+     <div class="row">
+        <div class="panel panel-primary" ng-show="newPaymentHome">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <span>Payments</span>
+                </h3>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Payment Name</th>
+                        <th>Payment Date </th>
+                        <th>Payment Amount</th>
+                        <th>Adjusted Amount</th>
+                        <th>View Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="payment  in paymentMaster.payments">
+                        <td>{{$index + 1}}</td>
+                        <td>{{payment.name}}</td>
+                        <td>{{payment.paymentDate | date:"dd MMM yyyy 'at' h:mma"}}</td>
+                        <td>{{payment.totalPaidAmount}}</td>
+                         <td>{{payment.totalAdjustmentAmount}}</td>
+                        <td>
+                            <button class="btn btn-primary" ng-click="viewPaymentDetails(payment)"> View Details </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

@@ -1,0 +1,58 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+        <uib-tabset justified="true">
+            <uib-tab heading="Daily Report">
+                <br />
+                <br />
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Provide Date to download Daily report</div>
+                        <div class="panel-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="date">Date</label>
+                                    <input type="date" class="form-control" id="date" ng-model="dailyReport">
+                                </div>
+
+                                <a class="btn btn-info" role="button" ng-href="{{reportURL}}/getDailyPaymentReportReportPDF/{{dailyReport.getFullYear()}}/{{ (dailyReport.getMonth() + 1)}}/{{dailyReport.getDate()}}/">Download Report</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </uib-tab>
+            <uib-tab heading="Net Pending Report">
+                <br />
+                <br />
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Provide From and To dates to download Net-Pending report</div>
+                        <div class="panel-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="from">From</label>
+                                    <input type="date" class="form-control" id="from" ng-model="dailyNetReportFrom">
+                                </div>
+                                <div class="form-group">
+                                    <label for="to">To</label>
+                                    <input type="date" class="form-control" id="to" ng-model="dailyNetReportTo">
+                                </div>
+                                <a class="btn btn-info" role="button" ng-href="{{reportURL}}/getNetPendingAmountTreatmentReportPDF/{{dailyNetReportFrom.getFullYear()}}/{{(dailyNetReportFrom.getMonth() + 1)}}/{{dailyNetReportFrom.getDate()}}/{{dailyNetReportTo.getFullYear()}}/{{(dailyNetReportTo.getMonth() + 1)}}/{{dailyNetReportTo.getDate()}}">Download Report</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+    <div class="col-md-2">
+    </div>
+</div>

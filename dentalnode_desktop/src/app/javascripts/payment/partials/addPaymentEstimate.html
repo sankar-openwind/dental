@@ -1,0 +1,98 @@
+
+<script type="text/ng-template" id="customTemplate.html">
+  <a>
+      <span bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+  </a>
+</script>
+
+<div class="panel panel-primary" ng-show="PaymentEstimatePanel">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			<span>Add Payment Estimate</span> 
+		</h3>
+	</div>
+	<div class="panel-body">
+		<div ng-controller="estimateCtrl">
+ 
+			<div class="row">
+				<div class="col-md-12">
+
+					<form  novalidate  class="form-horizontal" role="form">
+
+						<div class="form-group">
+							<label for="firstName" class="col-lg-3 control-label">Treament Name</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" ng-model="paymentEstimate.paymentEstimateName"
+								placeholder="Enter Treatment Name" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Amount</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control  " id="paymentEstimate.estimateAmount"
+								 disabled="true" ng-model="paymentEstimate.estimateAmount" required>
+							</div>
+						</div><button class= "btn btn-primary pull-right" ng-click="newItem($event)">New Item</button>  
+						<br><br>
+
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Treatment Type</th>
+									<th>Unit Cost</th>
+									<th>Number of Units</th>
+									<th>Sub Cost</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="elemnt in paymentEstimate.estimateelemnt ">
+
+									<div style="display:inline">
+										 	
+											<td><span>
+												<input type="text"class="form-control" ng-model="elemnt.treatmenttype" typeahead="treatmentType for treatmentType in treatmentTypes | filter:$viewValue | limitTo:8" placeholder="Treatment Type" typeahead-template-url="customTemplate.html" required/>
+
+											</span></td>
+											<td><span>
+												<input type="text" class="form-control" ng-model="elemnt.treatmentsubcost" placeholder="Unit Cost" required/>
+
+											</span></td>
+											<td> <span>
+												<input type="text" ng-model="elemnt.units" class="form-control" placeholder="No of Units"ng-keyup="estimatechanged($event)"  required  />
+
+											</span></td>
+											<td><span>
+												<input type="text" class="form-control" ng-model="elemnt.subcost" placeholder="Sub Cost" required disabled="true"/>
+
+											</span></td>
+											<td> 
+												<span ng-hide="elemnt.length == 1">
+													<a href ng-click="removeitem($index)">remove</a>
+												</span>	
+											</td>
+										 
+									</div> 
+								</tr>
+							</tbody>
+						</table>
+
+						
+
+						<div class="form-group">
+							<div class="col-xs-6 col-sm-3 col-md-offset-3">
+								<button ng-click="savePaymentEstimate(paymentEstimate)" class="btn btn-primary btn-lg">
+									Save Payment Estimate
+								</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+

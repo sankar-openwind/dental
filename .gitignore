@@ -1,0 +1,10 @@
+/dentalnode_desktop/node_modules/*
+/dentalnode_desktop/build/*
+/dentalnode_restful/node_modules/*
+/dentalnode_restful/.fuse*
+/dentalnode_report/node_modules/*
+/dentalnode_restful/dentalApp-debug.log
+/dentalnode_restful/dentalApp-error.log
+*.log
+.fuse*
+/dental/*

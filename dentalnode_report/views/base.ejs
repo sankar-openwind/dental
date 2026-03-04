@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<script src="js/angular/angular.js"></script>
+		<script src="js/angular/angular-route.min.js"></script>
+		<script src="js/angular/angular-sanitize.min.js"></script>
+		<script src="js/MenuController.js"></script>
+		<script src="js/NetPendingAmountReportController.js"></script>
+		 <script src="js/diagnosiscontroller.js"></script>
+		  <script src="js/treatmentcontroller.js"></script>
+		  <script src="js/patientDetailsController.js"></script>
+		  <script src="js/reportsController.js"></script>
+		<script src="js/dailyReportsController.js"></script>
+
+
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<title>Angel Dental Doctor</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+
+	</head>
+	<body>
+		<header role="banner">
+			<div class="page-header">
+				<div class="row">
+				 
+					<div class="col-md-12">
+						<a href="#/"><img src="img/social.png" alt="..."
+						class="img-rounded"></a>
+						<h2 style="display:inline;"> Angel Dental Hostpital <small>Advanced oral care</small></h2>
+					</div>
+					 
+				</div>
+			</div>
+		</header>
+
+		<div class="container-fluid">
+			<div class="row">
+			<div class="col-md-12">
+			<div class="panel panel-default">
+
+ 
+
+	<div class="panel-body">
+				<!--div class="col-xs-1"></div -->
+
+				<div class="col-sm-12">
+					<div ng-view></div>
+				</div>
+				<!--div class="col-xs-1"></div-->
+				<!-- Main content Ends-->
+</div>
+</div>
+</div >
+ 
+				<!--
+				Content Ends -->
+			</div>
+		</div>
+
+	</body>
+</html>

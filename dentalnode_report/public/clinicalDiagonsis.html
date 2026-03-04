@@ -1,0 +1,192 @@
+
+<div ng-controller="patientController">
+			<div class="row">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Actions</h3>
+					</div>
+					<div class="panel-body">
+						<div class="col-md-10">
+							<div class="col-md-1"></div>
+							<!-- Manage Patient Menu Items -->
+						<div ng-include src="'managePatientMenu.html'"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<br>
+			</div>
+
+			<div class="row">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Clinical Diagnosis</h3>
+					</div>
+					<div class="panel-body">
+						<!--
+						<form role="form" class="form-horizontal" role="form"
+							action="saveCaseHistory">
+
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="col-md-2  control-label">Weight</label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Weight" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+
+								<label for="exampleInputEmail1" class="col-md-2  control-label">Height</label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Height" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+								<label for="exampleInputEmail1" class="col-md-2 control-label">Body
+									Type</label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Body Type" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+							</div>
+
+							<div class="divider">
+								<hr>
+							</div>
+
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="col-md-2  control-label">Shape
+									of Head </label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Shape of Head " name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+
+								<label for="exampleInputEmail1" class="col-md-2  control-label">Facial Form</label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Facial Form" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+								<label for="exampleInputEmail1" class="col-md-2 control-label">Facial Profile</label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Facial Profile" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+							</div>
+
+							<div class="divider">
+								<hr>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="col-md-2  control-label">Facial Divergence </label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Facial Divergence" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+
+								<label for="exampleInputEmail1" class="col-md-2  control-label">Nasolabial Angle</label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Nasolabial Angle" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+								<label for="exampleInputEmail1" class="col-md-2 control-label">Symmetry</label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Symmetry" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+							</div>
+
+							<div class="divider">
+								<hr>
+							</div>
+
+
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="col-md-2  control-label">
+									Facial Proportions </label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Facial Proportions" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+
+								<label for="exampleInputEmail1" class="col-md-2  control-label">Clinical FMA</label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Clinical FMA" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+								<label for="exampleInputEmail1" class="col-md-2 control-label">Inter Labial Gap</label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Inter Labial Gap" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+							</div>
+
+							<div class="divider">
+								<hr>
+							</div>
+							
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="col-md-2  control-label">
+									Lip Posture and Tonicity </label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Lip Posture and Tonicity" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+
+								<label for="exampleInputEmail1" class="col-md-2  control-label">Mento Labial Sulcus</label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="Mento Labial Sulcus" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+								<label for="exampleInputEmail1" class="col-md-2 control-label">V.T.O</label>
+								<div class="col-lg-2">
+									<input type="text" class="form-control" id="exampleW"
+										placeholder="V.T.O" name="caseHistory.chiefComplaint"
+										required
+										value=<s:property value="caseHistory.chiefComplaint"/>>
+								</div>
+							</div>
+
+							<div class="divider">
+								<hr>
+							</div>
+
+							<input type="hidden" name="patient.id"
+								value="<%=session.getAttribute("patientId")%>">
+
+						</form>
+
+					-->
+					</div>
+				</div>
+
+
+			</div>
+
+ </div>

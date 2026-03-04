@@ -1,0 +1,117 @@
+<div class="row">
+	<div class="col-md-2" ></div>
+	<div class="col-md-8" >
+		<div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">New Patient Registration</h3>
+				</div>
+				<div class="panel-body">
+
+					<form  novalidate  class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="firstName" class="col-lg-3 control-label">First
+								Name</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" ng-model="patient.firstname"
+								placeholder="Enter First Name" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Last
+								Name</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" ng-model="patient.lastname"
+								id="patient.lastname" placeholder="Enter Last Name" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Address</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control  " id="patient.address"
+								placeholder="Enter Address" ng-model="patient.address" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="phone" class="col-lg-3 control-label">Phone</label>
+							<div class="col-lg-8">
+								<input type="tel" class="form-control" id="patient.phone"
+								placeholder="Enter Phone Number" ng-model="patient.phone" required  >
+							</div>
+						</div>
+
+	<div class="form-group">
+							<label for="phone" class="col-lg-3 control-label">Age</label>
+							<div class="col-lg-8">
+								<input type="tel" class="form-control" id="patient.age"
+								placeholder="Enter Age" ng-model="patient.age" required  >
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputGender" class="col-lg-3 control-label">Gender</label>
+							<div class="col-lg-8">
+								<div class="btn-group">
+									<label class="btn btn-info">
+										<input type="radio"
+										ng-model="patient.gender" value="male" id="patient.gender">
+										Male </label><label class="btn btn-info">
+										<input type="radio"
+										ng-model="patient.gender" value="female" id="patient.gender">
+										Female </label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="col-lg-3 control-label">Email</label>
+							<div class="col-lg-8">
+								<input type="email" class="form-control" id="patient.email" placeholder="Enter email" ng-model="patient.email">
+							</div>
+						</div>
+						<!--
+						<div class="form-group">
+
+							<label for="exampleInputdob" class="col-lg-3 control-label ">Date Of Birth</label>
+							<div class="col-lg-8">
+								<input type="datetime" class="form-control" id="patient.dateOfBirth"
+								placeholder="Select Date of Birth" ng-model="patient.dateOfBirth" required>
+							</div>
+
+						</div>
+
+						
+						<div class="form-group">
+							<label for="exampleInputdob" class="col-lg-3 control-label">Martial
+								Status</label>
+							<div class="col-lg-8">
+								<div class="btn-group">
+									<label class="btn btn-info">
+										<input type="radio"
+										ng-model="patient.maritalStatus" value="Single" id="patient.maritalStatus">
+										Single </label><label class="btn btn-info">
+										<input type="radio"
+										ng-model="patient.maritalStatus" value="Married" id="patient.maritalStatus">
+										Married </label>
+								</div>
+							</div>
+						</div>
+						-->
+						<div class="form-group">
+							<div class="col-xs-6 col-sm-3 col-md-offset-3">
+								<button ng-click="savePatient(patient)" class="btn btn-primary btn-lg">
+									Save Patient
+								</button>
+							</div>
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

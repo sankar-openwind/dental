@@ -1,0 +1,45 @@
+<div class="row">
+
+    <!-- Manage Patient Menu Items -->
+    <div ng-include src="'/app/javascripts/common/partials/managePatientMenu.html'"></div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="btn-toolbar pull-right "></div>
+        
+        <div ng-if="PaymentEstimatePanel">
+            <div ng-include="'/app/javascripts/payment/partials/addPaymentEstimate.html'"></div>
+        </div>
+        
+        <div ng-if="ViewPaymentEstiPanel">
+            <div ng-include="'/app/javascripts/payment/partials/viewPaymentEstimate.html'"></div>
+        </div>
+
+        <div ng-if="addPaymentPanel">
+            <div ng-include="'/app/javascripts/payment/partials/addPaymentPanel.html'"></div>
+        </div>
+
+        <div ng-if="addPaymentPlanPanel">
+            <div ng-include="'/app/javascripts/payment/partials/addPaymentPlanPanel.html'"></div>
+        </div>
+        
+        <div ng-if="addPaymentAdjustmentPanel">
+            <div ng-include="'/app/javascripts/payment/partials/addPaymentAdjustmentPanel.html'"></div>
+        </div>
+        
+        <div ng-if="viewPaymentListPanel">
+            <div ng-include="'/app/javascripts/payment/partials/viewPaymentListPanel.html'"></div>
+        </div>
+        <div ng-if="ViewPaymentPanel">
+            <div ng-include="'/app/javascripts/payment/partials/viewPaymentPlanPanel.html'"></div>
+        </div>
+        <div ng-if="newPaymentHome">
+            <div ng-include="'/app/javascripts/payment/partials/newPaymentHome.html'"></div>
+        </div>
+
+    </div>
+    <div class="col-md-2"></div>
+</div>

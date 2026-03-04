@@ -1,0 +1,20 @@
+10-03-2014  Pre Alpha 1.0
+
+The dental application is in the development release. Currently deployed below functionality.The application is being targeted for both desktop and ipad version.
+
+* Authentication
+* Patient Home page
+* New Patient Creation
+* Patient Search for existing patient
+* Patient CaseHistory -- Save yet to be completed 
+* patient Diagnosis  -- Save yet to be completed.
+
+Other functionality are in partial development, and would get shape soon.
+
+The next version of the release would comprise of Pre Alpa v1.1 release on 16-03-2013. 
+
+* Clinical Diagonsis
+*. Patient Case History Save
+*. Patient Diagnosis Save
+*. Treatment Plan.
+*. Fixing the existing bugs

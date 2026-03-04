@@ -1,0 +1,61 @@
+<div class="row">
+
+    <!-- Manage Patient Menu Items -->
+    <div ng-include src="'/app/javascripts/common/partials/managePatientMenu.html'"></div>
+
+</div>
+
+<div class="row">
+    <br>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Chief Complaint</h3>
+                </div>
+                <div class="panel-body">
+
+                    <form role="form" class="form-horizontal" role="form">
+
+
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="col-lg-3 control-label">Chief Complaint
+                            </label>
+                            <div class="col-lg-8">
+                                <textarea class="form-control" id="exampleInputEmail1" placeholder="Enter Chief Complaint" ng-model="chiefComplaint.chiefComplaintDetails" rows="6"> </textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="col-lg-3 control-label">Medical History </label>
+                            <div class="col-lg-8">
+                                <textarea class="form-control" id="exampleInputPassword1" ng-model="chiefComplaint.medicalHistory" placeholder="Medical History" rows="6"> </textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="col-lg-3 control-label">Any Other Information</label>
+                            <div class="col-lg-8">
+                                <textarea class="form-control" id="exampleInputPassword1" ng-model="chiefComplaint.anyOtherInformation" placeholder="Any Other Information" rows="6"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-6 col-sm-3 col-md-offset-3">
+                                <button type="submit" ng-click="saveChiefComplaint(chiefComplaint)" class="btn btn-primary btn-lg pull-center">
+                                    Save Chief Complaint
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

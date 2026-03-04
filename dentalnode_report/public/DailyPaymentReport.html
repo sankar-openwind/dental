@@ -1,0 +1,39 @@
+<div class="row"  ng-controller="reportsController">
+	<div class="col-md-12">
+		<div>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Daily Payment Amount Report              <b> Date </b> - {{dailyPaymentReport.paymentDate | date:"dd MMM yyyy" }}    <b>Total Payment </b> - {{dailyPaymentReport.totalPayment}}  </h3>
+				</div>
+
+				<div class="panel-body">
+
+				<table class="table table-hover">
+      <thead>
+        <tr>
+          <th>PatientID</th>
+          <th>Name</th>
+          <th>Paid Amount</th>
+          <th>Payment Type</th>
+          <th>Payment Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="payment in dailyPaymentReport.dailyPaymentReport">
+          <th>{{payment.patientId}}</th>
+          <td>{{payment.firstname}}</td>
+          <td>{{payment.paidAmount}}</td>
+          <td>{{payment.paymentName}}</td>
+          <td>{{payment.paymentDate | date:"dd MMM yyyy 'at' h:mma"}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+			 
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

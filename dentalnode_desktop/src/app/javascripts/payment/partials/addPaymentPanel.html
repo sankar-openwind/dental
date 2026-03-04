@@ -1,0 +1,61 @@
+ 
+<div class="panel panel-primary" ng-show="addPaymentPanel">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span>Add Payment </span> 
+					</h3>
+				</div>
+				<div class="panel-body">
+	
+					<form  novalidate  class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="firstName" class="col-lg-3 control-label">Payment Details</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" value="patientId" ng-model="palnnedPayment.patientId"
+								 disabled="true" required placeholder="patientId" >
+							</div>
+						</div>
+						 
+
+ 						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Planned Amount</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control  " id="palnnedPayment.plannedAmount"
+								placeholder="plannedAmount" ng-model="palnnedPayment.plannedAmount" required>
+							</div>
+						</div>
+						
+
+ 						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Paid Amount</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control  " id="palnnedPayment.lastPaidAmount"
+								placeholder="Amount paid now" ng-model="palnnedPayment.lastPaidAmount" required>
+							</div>
+						</div>
+
+
+ 						<div class="form-group">
+							<label for="lastName" class="col-lg-3 control-label">Comments</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control  " id="palnnedPayment.comments"
+								placeholder="Comments for the payment" ng-model="palnnedPayment.comments" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-6 col-sm-3 col-md-offset-5">
+								<button ng-click="savePayment(palnnedPayment)" class="btn btn-primary ">
+									Save Payment 
+								</button>
+							</div>
+							<div class="col-xs-6 col-sm-3 ">
+								<button ng-click="returnHome()" class="btn btn-primary ">
+									Back 
+								</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>

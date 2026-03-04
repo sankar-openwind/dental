@@ -1,0 +1,32 @@
+.glyphicon-edit {
+  font-size: 25px;
+}
+.btnpadding {
+    margin: 4px;
+}
+
+.newwell {
+    background: rgb(255, 255, 204);
+}
+
+.main-screen>li {
+    width: 33%;
+    text-align: center;
+}
+
+.swatch-custom-styles {
+    display: inline-block;
+    width: 13%;
+}
+
+.btn-cust-style {
+    width: 100% !important;
+}
+
+.teeth-quadrant {
+    text-align: center;
+}
+
+.teeth {
+    margin: 0 .0em;
+}

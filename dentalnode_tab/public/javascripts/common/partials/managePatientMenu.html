@@ -1,0 +1,99 @@
+ 
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">Actions</h3>
+			</div>
+			<div class="panel-body">
+				<div class="color-swatches">
+
+					<div class="color-swatch">
+						<a ng-href="#/viewPatient/{{patient.patientid}}">
+						<button class="btn btn-default">
+
+							<img src="img/casehistory.png" class="img-rounded">
+							<div class="caption">
+								<h5>View Patient</h5>
+							</div>
+						</button> </a>
+					</div>
+
+					<div class="color-swatch">
+						<a ng-href="#/chiefComplaint/{{patient.patientid}}">
+						<button   class="btn btn-default">
+
+							<img src="img/casehistory.png" class="img-rounded">
+							<div class="caption">
+								<h5>Chief Complaint</h5>
+							</div>
+						</button> </a>
+					</div>
+
+					<div class="color-swatch">
+						<a ng-href="#/photos/{{patient.patientid}}">
+						<button type="submit" class="btn btn-default">
+							<img src="img/photography.png" class="img-rounded">
+							<div class="caption">
+								<h5>Photos</h5>
+							</div>
+						</button> </a>
+					</div>
+
+					<div class="color-swatch">
+						<a ng-href="#/diagnosisPage/{{patient.patientid}}">
+						<button type="submit" class="btn btn-default" formaction="getDiagnosisPage">
+							<img src="img/diagnosis.png" class="img-rounded">
+							<div class="caption">
+								<h5>Case History</h5>
+							</div>
+						</button> </a>
+					</div>
+
+					<div class="color-swatch">
+						<a ng-href="#/treatmentPage/{{patient.patientid}}">
+						<button type="submit" class="btn btn-default"
+						formaction=" " >
+
+							<img src="img/casehistory.png" class="img-rounded">
+							<div class="caption">
+								<h5>Treatment Plan</h5>
+							</div>
+						</button> </a>
+					</div>
+
+					<div class="color-swatch">
+						<a ng-href="#/diagnosisPage/{{patient.patientid}}">
+						<button type="submit" class="btn btn-default" formaction="#">
+							<img src="img/prescription.png" class="img-rounded">
+							<div class="caption">
+								<h5>Prescription</h5>
+							</div>
+						</button> </a>
+					</div>
+
+					<div class="color-swatch">
+						<a ng-href="#/comment/{{patient.patientid}}">
+							<button type="submit" class="btn btn-default" >
+								<img src="img/comment.jpg" class="img-rounded">
+								<div class="caption">
+									<h5>Follow Up</h5>
+								</div>
+							</button>
+						</a>
+					</div>
+
+
+					<div class="color-swatch">
+						<a ng-href="#/payment/{{patient.patientid}}">
+							<button type="submit" class="btn btn-default" >
+								<img src="img/payment.png" class="img-rounded">
+								<div class="caption">
+									<h5>Payments</h5>
+								</div>
+							</button>
+						</a>
+					</div>
+
+		</div>
+			</div>
+		</div>
+ 
